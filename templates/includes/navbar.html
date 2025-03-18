@@ -1,0 +1,57 @@
+{% load static %}
+
+<!-- Main Wrapper -->
+<div class="wrapper">
+    <!-- Header Start -->
+    <header id="header">
+        <div class="main-header bg-white py-3">
+            <div class="container">
+                <div class="row align-items-center d-flex" style="height: 60px;">
+                    <!-- Left Side (Logo & Location) -->
+                    <div class="col-lg-8 col-md-8 col-sm-12 d-flex align-items-center">
+                        <!-- Logo -->
+                        <div class="logo d-flex align-items-center">
+                            <figure class="mb-0">
+                                <a href="{% url 'home' %}" class="light-logo">
+                                    <img src="{% static 'extra-images/main-logo.png' %}" alt="FoodBakery" style="height: 50px;">
+                                </a>
+                            </figure>
+                        </div>
+
+                        <!-- Location Input -->
+                        <div class="main-location ml-4 d-flex align-items-center w-100">
+                            <ul class="list-unstyled mb-0 w-100">
+                                <li class="location-has-children choose-location w-100">
+                                    <form action="#" class="position-relative w-100">
+                                        <!-- Input Field -->
+                                        <input type="text" name="location" class="form-control w-100 pr-4" placeholder="Enter your delivery location" autocomplete="off">
+                                        
+                                        <!-- Target Icon Inside Input -->
+                                        <span id="foodbakery_radius_location_open" class="foodbakery-radius-location position-absolute d-flex align-items-center"
+                                            style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                                            <i class="icon-target5"></i>
+                                        </span>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Side (Login & Register) -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-center justify-content-end">        
+                        <span class="d-flex align-items-center">
+                            <a class="get-start-btn btn p-0" data-target="#sign-in" data-toggle="modal" href="#user-register">Login</a>
+                            <span class="mx-1">/</span>
+                            <a class="get-start-btn btn p-0" data-target="#sign-in" href="{% url 'registerUser' %}">Register</a>
+                        </span>
+                        <div class="login-option d-flex align-items-center">   
+                            <a class="get-start-btn btn px-4 py-2 ml-3" href="register-restaurant.html">
+                                Register Restaurant
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
