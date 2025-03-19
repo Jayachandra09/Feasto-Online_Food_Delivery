@@ -38,17 +38,25 @@
                     </div>
 
                     <!-- Right Side (Login & Register) -->
-                    <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-center justify-content-end">        
+                    <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-center justify-content-end"> 
+                        {% if user.is_authenticated %}  
                         <span class="d-flex align-items-center">
-                            <a class="get-start-btn btn p-0" data-target="#sign-in" data-toggle="modal" href="#user-register">Login</a>
-                            <span class="mx-1">/</span>
-                            <a class="get-start-btn btn p-0" data-target="#sign-in" href="{% url 'registerUser' %}">Register</a>
+                            <a class="get-start-btn btn p-0" href="{% url 'myAccount' %}">My Account</a>
+                                <span class="mx-2"></span>
+                            <a class="get-start-btn btn p-0 text-danger" href="{% url 'logout' %}">Logout</a>
                         </span>
-                        <div class="login-option d-flex align-items-center">   
-                            <a class="get-start-btn btn px-4 py-2 ml-3" href="{% url 'registerVendor' %}">
-                                Register Restaurant
-                            </a>
-                        </div>
+                        {% else %}
+                            <span class="d-flex align-items-center">
+                                <a class="get-start-btn btn p-0" href="{% url 'login' %}">Login</a>
+                                <span class="mx-1">/</span>
+                                <a class="get-start-btn btn p-0" href="{% url 'registerUser' %}">Register</a>
+                            </span>
+                            <div class="login-option d-flex align-items-center">   
+                                <a class="get-start-btn btn px-4 py-2 ml-3" href="{% url 'registerVendor' %}">
+                                    Register Restaurant
+                                </a>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
