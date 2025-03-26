@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #Custom Apps
     'accounts',
     'vendor',
+    'menu',
 ]
 
 MIDDLEWARE = [
@@ -156,4 +157,4 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Feasto Food <feasto.jay@gmail.com>'
 
-GOOGLE_API_KEY = 'AIzaSyB49M14nxj0nBFqoWLqNrcwSYaixedalSY'
+GOOGLE_API_KEY = config('GOOGLE_API_KEY')
