@@ -35,10 +35,17 @@
                                         <a href=""><p class="mb-0 font-weight-bold">{{ food }}</p>
                                         <small class="text-muted">{{ food.description }}</small></a>
                                     </td>
+                                    <td>
+                                        {% if food.is_available %}
+                                            <span class="badge badge-success">Available</span>
+                                        {% else %}
+                                        <span class="badge badge-danger">Not Available</span>
+                                        {% endif %}
+                                    </td>
                                     <!-- Edit and Delete buttons without color -->
                                     <td class="text-right">
-                                        <a href="#" class="mx-1"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="mx-1"><i class="fa fa-trash text-danger"></i></a>
+                                        <a href="{% url 'edit_food' food.id %}" class="mx-1" style="color: unset;"><i class="fa fa-pencil"></i></a>
+                                        <a href="{% url 'delete_food' food.id %}" class="mx-1" onclick="return confirm('Are you sure want to delete this food Item?')"><i class="fa fa-trash text-danger"></i></a>
                                     </td>
                                   </tr>
                                 {% endfor %}
