@@ -1,4 +1,4 @@
-# Feast - Food Delivery App 🍔🚴‍♂️
+#  🛵 Feast - Food Delivery App 
 
 A Django-based backend project for a food delivery application. This project focuses on backend functionality like vendor registration, dynamic cart operations, location autocomplete, and more.
 
